@@ -1,5 +1,5 @@
 ---
-aliases: ['/docs/how-to-update']
+toc: true
 ---
 
 # How to update

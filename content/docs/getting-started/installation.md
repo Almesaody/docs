@@ -24,12 +24,17 @@ toc: true
 
 ```bash
 apt -y install software-properties-common curl apt-transport-https ca-certificates gnupg
+
 LC_ALL=C.UTF-8 add-apt-repository -y ppa:ondrej/php
+
 # If you are on Ubuntu 22.04, you can skip this step
 curl -sS https://downloads.mariadb.com/MariaDB/mariadb_repo_setup | sudo bash
+
 apt update
+
 # Add universe repository if you are on Ubuntu 18.04
 apt-add-repository universe
+
 apt -y install php8.1 php8.1-{common,cli,gd,mysql,mbstring,bcmath,xml,fpm,curl,zip} mariadb-server nginx tar unzip git redis-server
 ```
 
@@ -57,6 +62,7 @@ You will need a database setup and a user with the correct permissions created f
 
 ```bash
 mysql -u root -p
+
 # Remember to change 'yourPassword' below to be a unique password
 CREATE USER 'paymenter'@'127.0.0.1' IDENTIFIED BY 'yourPassword';
 CREATE DATABASE paymenter;
@@ -69,6 +75,7 @@ First we will copy over our default environment settings file, install core depe
 ```bash
 cp .env.example .env
 composer install --no-dev --optimize-autoloader
+
 # Only run the command below if you are installing this Panel for
 # the first time and do not have any Paymenter Panel data in the database.
 php artisan key:generate --force
@@ -113,15 +120,18 @@ php artisan p:user:create
 
 For nginx you can create a file in /etc/nginx/sites-available/ called paymenter.conf and add the following:
 
-```nginx
+```conf
 server {
     listen 80;
     server_name paymenter.org;
     root /var/www/paymenter/public;
+
     index index.php;
+
     location / {
         try_files $uri $uri/ /index.php?$query_string;
     }
+
     location ~ \.php$ {
         include snippets/fastcgi-php.conf;
         fastcgi_pass unix:/var/run/php/php8.1-fpm.sock;
@@ -141,22 +151,27 @@ sudo systemctl restart nginx
 
 For nginx you can create a file in /etc/nginx/sites-available/ called paymenter.conf and add the following:
 
-```nginx
+```conf
 server {
     listen 80;
     server_name paymenter.org;
     return 301 https://$host$request_uri;
 }
+
 server {
     listen 443 ssl http2;
     server_name paymenter.org;
     root /var/www/paymenter/public;
+
     index index.php;
+
     ssl_certificate /etc/letsencrypt/live/paymenter.org/fullchain.pem;
     ssl_certificate_key /etc/letsencrypt/live/paymenter.org/privkey.pem;
+
     location / {
         try_files $uri $uri/ /index.php?$query_string;
     }
+
     location ~ \.php$ {
         include snippets/fastcgi-php.conf;
         fastcgi_pass unix:/var/run/php/php8.1-fpm.sock;
@@ -207,6 +222,7 @@ For apache you can create a file in /etc/apache2/sites-available/ called payment
     ServerAlias www.paymenter.org
     Redirect permanent / https://paymenter.org/
 </VirtualHost>
+
 <VirtualHost *:443>
     ServerName paymenter.org
     ServerAlias www.paymenter.org
