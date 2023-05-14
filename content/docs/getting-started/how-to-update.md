@@ -1,4 +1,5 @@
 ---
+aliases: ['/docs/how-to-update']
 toc: true
 ---
 

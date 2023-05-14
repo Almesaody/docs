@@ -91,6 +91,7 @@ themes
                   ├── confirm.blade.php
                   ├── forgot.blade.php
                   └── reset.blade.php
+
 ```
 
 ## API endpoints (usable for react)
