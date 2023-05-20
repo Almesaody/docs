@@ -6,14 +6,11 @@ toc: true
 # How to update
 
 ## Automatic update
-DOES NOT WORK, WILL BE FIXED SOON! 
-<!--
 Run the following command in your terminal:
 ```bash
 cd /var/www/paymenter
 php artisan p:upgrade
 ```
--->
 
 ## Manual update
 Cd to your paymenter directory and run the following commands:
@@ -50,7 +47,7 @@ php artisan view:clear
 
 ### Set webserver permissions
 ```bash
-chown -R www-data:www-data /var/www/paymenter
+chown -R www-data:www-data /var/www/paymenter/*
 ```
 
 ### Remove the maintenance mode
