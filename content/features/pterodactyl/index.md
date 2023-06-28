@@ -20,9 +20,9 @@ Insert your API key and your Pterodactyl URL in the Paymenter admin panel. Here 
 
 * Example: https://panel.paymenter.org
 
-* Please note that you dont need a "/" at the end cause this breaks the System currently.
+* Please note that you dont need a "/" at the end.
 
-#### Step 3: Product settings
+### Configuring the product
 
 * After you have created an Product you need to go to the settings
 

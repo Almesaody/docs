@@ -20,3 +20,4 @@ VirtFusion is a powerful and feature-rich virtualization control panel that allo
 * After you have created an Product you need to go to the settings
 
 * Fill in the product details and select the server you want to assign to the product
+
