@@ -18,5 +18,4 @@
 - title: Guides
   slug: guides
   pages:
-    - title: OAuth
-    
+    - title: DiscordOAuth
