@@ -1,23 +1,65 @@
-# Virtfusion
-## Overview
-VirtFusion is a powerful and feature-rich virtualization control panel that allows you to manage rock-solid KVM virtual machines.
-[Website](https://virtfusion.com)
+# Use Virtfusion with paymenter
 
-## Setup with Paymenter
-### Step 1: VirtFusion API
-#### Create a API key in VirtFusion
-![image](virtfusion.png)
+<h2>Overview</h2>
+ <p> Virtfusion is a VPS Control panel. With modern UI and state of the art features. </p>
 
-#### Copy the API key and paste it in the Paymenter admin panel. Here is an Example how that would look like
-![image](apikey.png)
+Learn More [here](https://virtfusion.com/)
 
-### Step 2: Insert your Panel URL
-* Example: <https://panel.paymenter.org>
 
-* Please note that you dont need a "/" at the end.
+<h2>Prerequisites</h2>
+- Packages made in virtfuion <br>
+- Virtfusion Control Panel installed and functional <br>
+- Functional Virtfusion Instance <br>
+- Virtfusion Email setup for client access
 
-### Step 3: Product settings
-* After you have created an Product you need to go to the settings
+<h2> Setup </h2>
 
-* Fill in the product details and select the server you want to assign to the product
+>  Navigate to vps.yoursite.org/admin/dashboard
 
+
+
+> Click API
+
+![](step1.png)
+
+
+
+> Create a Token
+
+![](step2.png)
+
+
+> Name your token and add access settings
+
+> ![](step3.png)
+
+> Copy your token (This is important it only appears one time!)
+
+> ![](step4.png)
+
+
+> Go to paymenter > Extensions > Virtfusion > Edit
+
+> Enter an identifiable name & copy the API Key into the API Key field
+
+> ![](step5.png)
+
+
+> Enable the module
+
+![](step6.png)
+
+
+<h2> Creating a product with Virtfusion </h2>
+
+  > Create the Product 
+
+![](step7.png)
+
+> Add the Package ID You created when seting up virtfusion, and other details.
+
+![](step8.png)
+
+>
+<h2> Thats it! </h2>
+\
